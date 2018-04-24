@@ -28,7 +28,7 @@ angular.module('app').service('clickStorage', function ($q, $http) {
           method: 'POST',
           url: "https://api2-016.responsys.net/rest/api/v1.3/clDocs",
           headers: {
-            "Authorization": "E2Vn4wHR2GU66ppt3RvjItjPvqplOcPY2y3PjogktBrvaCKGjO4aylJg",
+            "Authorization": "E8hErEKAXvEWM-EFCuYAYFiXUIoHFkxHpulbN3c6lSvS9rX5WtwszLKh",
             "Content-type": "application/json"
           },
           data: {
@@ -44,7 +44,7 @@ angular.module('app').service('clickStorage', function ($q, $http) {
                 method: "POST",
                 url: "https://api2-016.responsys.net/rest/api/v1.3/clDocImages/contentlibrary/donut_2/" + htmlAndImages.htmlFileName + ".htm",
                 headers: {
-                  "Authorization": "E2Vn4wHR2GU66ppt3RvjItjPvqplOcPY2y3PjogktBrvaCKGjO4aylJg",
+                  "Authorization": "E8hErEKAXvEWM-EFCuYAYFiXUIoHFkxHpulbN3c6lSvS9rX5WtwszLKh",
                   "Content-type": "application/json"
                 },
                 data: {
@@ -58,7 +58,7 @@ angular.module('app').service('clickStorage', function ($q, $http) {
                     method: "POST",
                     url: "https://api2-016.responsys.net/rest/api/v1.3/campaigns",
                     headers: {
-                      "Authorization": "E2Vn4wHR2GU66ppt3RvjItjPvqplOcPY2y3PjogktBrvaCKGjO4aylJg",
+                      "Authorization": "E8hErEKAXvEWM-EFCuYAYFiXUIoHFkxHpulbN3c6lSvS9rX5WtwszLKh",
                       "Content-type": "application/json"
                     },
                     data: {
@@ -81,7 +81,7 @@ angular.module('app').service('clickStorage', function ($q, $http) {
                         method: "POST",
                         url: "https://api2-016.responsys.net/rest/api/v1.3/campaigns/" + htmlAndImages.htmlFileName + "/email",
                         headers: {
-                          "Authorization": "E2Vn4wHR2GU66ppt3RvjItjPvqplOcPY2y3PjogktBrvaCKGjO4aylJg",
+                          "Authorization": "E8hErEKAXvEWM-EFCuYAYFiXUIoHFkxHpulbN3c6lSvS9rX5WtwszLKh",
                           "Content-type": "application/json"
                         },
                         data: {

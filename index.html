@@ -21,20 +21,20 @@
     <div ng-init="showForm = true" ng-show="showForm" class="row">
       <div class="col-md-12">
         <form id="click-form" ng-submit="submit()">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="subjectLine">Subject Line</label>
             <input type="text" id="subjectLine" ng-model="newSubject" class="form-control">
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label for="emailList">Send to which list of emails?</label>
             <select class="form-control" ng-model="listDropdown" ng-options="y for (x, y) in listName">
             </select>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label for="emailFolder">Which folder?</label>
             <select class="form-control" ng-model="folderDropdown" ng-options="folder for (id, folder) in folderName">
             </select>
-          </div>
+          </div> -->
           <div class="form-group">
             <label for="zip">Upload Images</label>
             <input class="zipInput" type='file' id="rawImages" ng-model='uploadedImage' multiple base-sixty-four-input>
