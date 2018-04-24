@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+    <title>One-Click QA</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller='clickCtrl'>
+
+
+  <div class='container'>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">Donut</a>
+        </div>
+      </div>
+    </nav>
+
+    <div ng-init="showForm = true" ng-show="showForm" class="row">
+      <div class="col-md-12">
+        <form id="click-form" ng-submit="submit()">
+          <div class="form-group">
+            <label for="subjectLine">Subject Line</label>
+            <input type="text" id="subjectLine" ng-model="newSubject" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="emailList">Send to which list of emails?</label>
+            <select class="form-control" ng-model="listDropdown" ng-options="y for (x, y) in listName">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="emailFolder">Which folder?</label>
+            <select class="form-control" ng-model="folderDropdown" ng-options="folder for (id, folder) in folderName">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="zip">Upload Images</label>
+            <input class="zipInput" type='file' id="rawImages" ng-model='uploadedImage' multiple base-sixty-four-input>
+          </div>
+          <div class="form-group">
+              <label for="subjectLine">HTML File Name</label>
+              <input type="text" id="htmlFileName" ng-model="htmlFileName" class="form-control">
+          </div>
+          <div class="form-group">
+              <label>Raw HTML</label>
+              <textarea rows="12" cols="100" ng-model="rawHtml" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" ng-click="showForm = false; loadingSpinner = true">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+    <div ng-show="errorPage" class="row">
+      <div class="col-md-12">
+        <h1><span style="color: red;">Uh-oh</span>, looks like you had an error. Refresh the page and try your request again.</h1>
+      </div>
+    </div>
+
+    <div ng-show="loadingSpinner" class="row">
+      <div class="col-md-12" align="center">
+        <img src="./images/donut.gif" style="display: block" border="0" width="800" height="600" />
+        <h1>Your zip file and info are being sent to Mail Chimp and then off to your selected email addresses.</h1>
+        <textarea rows="10" cols="140" ng-model="showHtml"></textarea>
+      </div>
+    </div>
+
+    <div ng-show="loadingSpinner === false && showForm === false && errorPage === false" class="row">
+      <div class="col-md-12">
+        <h1 class="h1Conf">Your email has been sent to the addresses in list:</h1>
+        <h1 class="h1Yellow">{{ listDropdown }}</h1>
+      </div>
+    </div>
+
+  </div>
+    <script type="text/javascript" src="lib/jquery/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/clickCtrl.js"></script>
+    <script type="text/javascript" src="app/clickStorage.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/adonespitogo/angular-base64-upload/master/src/angular-base64-upload.js"></script>
+</body>
+</html>
