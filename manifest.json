@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name"            : "Donut 3.0",
+  "description"     : "Save time for QA",
+  "short_name"      : "Donut 3.0",
+  "version"         : "0.1",
+  "browser_action": {
+      "default_icon": "images/donut_icon.png",
+      "default_title": "Donut 3.0"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "debugger",
+    "storage",
+    "https://api2-016.responsys.net/rest/api/v1.3/clDocs",
+    "tabs"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.rawgit.com/adonespitogo/angular-base64-upload/master/src/angular-base64-upload.js; object-src 'self'"
+}
