@@ -1,0 +1,46 @@
+body {
+    width: 100%;
+    background-color: #384b5f;
+}
+
+.navbar {
+  background-color: #222222;
+}
+
+.h1Yellow {
+  color: yellow;
+  text-align: center;
+}
+
+.h1Conf {
+  text-align: center;
+}
+
+.zipInput {
+  color: #ffffff;
+}
+
+.todo-item .btn-remove-todo {
+    display:none;
+}
+
+.todo-item:hover .btn-remove-todo {
+    display: block;
+}
+
+.todo-item .todo-content {
+    font-weight: bold;
+}
+.todo-item.completed .todo-content {
+    color:darkgray;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+#todo-list {
+    margin-bottom: 10px;
+}
+
+#btn-remove-all {
+    margin-bottom: 10px;
+}
