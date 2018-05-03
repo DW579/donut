@@ -35,7 +35,28 @@ angular.module('app').service('clickStorage', function ($q, $http) {
         }
 
         // ||||||||| Test Just Creating An HTML File ||||||||||
-        $http(createHtml).then(function successCallback(response) {
+        // $http(createHtml).then(function successCallback(response) {
+        //     console.log(response);
+        // }, function errorCallback(response) {
+        //   console.log(response);
+        //   clickStorage.errorPage = true;
+        // });
+
+        // ||||||||||| Test uploading just the images |||||||||||
+        var postImages = {
+            method: 'POST',
+            url: "https://api2-016.responsys.net/rest/api/v1.3/clDocImages/contentlibrary/donut_2/Starbucks_test.htm",
+            headers: {
+              "Authorization": "Ef99xCUXy2gqNRHCIIUSBcRW-3vdYXfZm6DWDcgpkhHF7G8zDPDOGos7",
+              "Content-type": "application/json"
+          },
+          data: {
+              "documentPath": "/contentlibrary/donut_2/Starbucks_test.htm",
+              "imageData": htmlAndImages.images
+          }
+        }
+
+        $http(postImages).then(function successCallback(response) {
             console.log(response);
         }, function errorCallback(response) {
           console.log(response);
@@ -52,10 +73,10 @@ angular.module('app').service('clickStorage', function ($q, $http) {
         //           "Authorization": "E8hErEKAXvEWM-EFCuYAYFiXUIoHFkxHpulbN3c6lSvS9rX5WtwszLKh",
         //           "Content-type": "application/json"
         //         },
-        //         data: {
-        //             "documentPath": "/contentlibrary/donut_2/" + htmlAndImages.htmlFileName + ".htm",
-        //             "imageData": htmlAndImages.images
-        //         }
+                // data: {
+                //     "documentPath": "/contentlibrary/donut_2/" + htmlAndImages.htmlFileName + ".htm",
+                //     "imageData": htmlAndImages.images
+                // }
         //     }).then(function successCallback(response) {
         //         console.log("Step 2 done, images uploaded to Doc, response is below:");
         //         console.log(response);
