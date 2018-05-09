@@ -21,18 +21,20 @@ angular.module('app').service('clickStorage', function ($q, $http) {
     this.createCampaign = function (htmlAndImages) {
         var documentPath = htmlAndImages.html.documentPath;
         var content = htmlAndImages.html.content;
-        var createHtml = {
-          method: 'POST',
-          url: "https://api2-016.responsys.net/rest/api/v1.3/clDocs",
-          headers: {
-            "Authorization": "Ef99xCUXy2gqNRHCIIUSBcRW-3vdYXfZm6DWDcgpkhHF7G8zDPDOGos7",
-            "Content-type": "application/json"
-          },
-          data: {
-              "documentPath": documentPath,
-              "content": content
-          }
-        }
+        // var createHtml = {
+        //   method: 'POST',
+        //   url: "https://api2-016.responsys.net/rest/api/v1.3/clDocs",
+        //   headers: {
+        //     "Authorization": "EdJcZMQw7a0NzrO-p61tVXcyZJY5UXQfohgSAVMaD2xLuxAUBozPUrw5",
+        //     "Content-type": "application/json"
+        //   },
+        //   data: {
+        //       "documentPath": documentPath,
+        //       "content": content
+        //   }
+        // }
+
+        
 
         // ||||||||| Test Just Creating An HTML File ||||||||||
         // $http(createHtml).then(function successCallback(response) {
@@ -41,27 +43,6 @@ angular.module('app').service('clickStorage', function ($q, $http) {
         //   console.log(response);
         //   clickStorage.errorPage = true;
         // });
-
-        // ||||||||||| Test uploading just the images |||||||||||
-        var postImages = {
-            method: 'POST',
-            url: "https://api2-016.responsys.net/rest/api/v1.3/clDocImages/contentlibrary/donut_2/Starbucks_test.htm",
-            headers: {
-              "Authorization": "Ef99xCUXy2gqNRHCIIUSBcRW-3vdYXfZm6DWDcgpkhHF7G8zDPDOGos7",
-              "Content-type": "application/json"
-          },
-          data: {
-              "documentPath": "/contentlibrary/donut_2/Starbucks_test.htm",
-              "imageData": htmlAndImages.images
-          }
-        }
-
-        $http(postImages).then(function successCallback(response) {
-            console.log(response);
-        }, function errorCallback(response) {
-          console.log(response);
-          clickStorage.errorPage = true;
-        });
 
         // $http(createHtml).then(function successCallback(response) {
         //     console.log("Step 1 done, Doc set up, response is below:");

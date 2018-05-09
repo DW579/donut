@@ -44,23 +44,6 @@ angular.module('app', ['naif.base64']).controller('clickCtrl', function ($scope,
           var singleArrayHtml = groupArrayHtml[i].split("");
           var arrayLength = singleArrayHtml.length;
 
-          for(var j = 0; j < arrayLength; j++) {
-              // if(singleArrayHtml[j] === '"') {
-              //     singleArrayHtml[j] = '\\"';
-              // }
-              // else if (singleArrayHtml[j] === "'") {
-              //     singleArrayHtml[j] = "\\'";
-              // }
-              // else if (singleArrayHtml[j] === '>') {
-              //     singleArrayHtml[j] = ">\\r\\n ";
-              // }
-              // else if(singleArrayHtml[j] === '<' && singleArrayHtml[j+1] === "/") {
-              //     singleArrayHtml[j] = "<\\";
-              // }
-              // ^^^^^^^^ Testing including file name before images folder ^^^^^^^
-
-          }
-
           singleArrayHtml = singleArrayHtml.join('');
 
           groupArrayHtml[i] = singleArrayHtml.trim();
