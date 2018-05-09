@@ -60,8 +60,6 @@ angular.module('app', ['naif.base64']).controller('clickCtrl', function ($scope,
       // ******* JSON Object to be sent over to clickStorage after images and HTML are ready for transport *****
       for(var i = 0; i < uploadedImages.length; i++) {
           var sampleArray = {
-              // "itemPath": "images/" + uploadedImages[i].filename,
-              "itemPath": "/contentlibrary/donut_2/" + uploadedImages[i].filename,
               "itemData": uploadedImages[i].base64
           };
 
@@ -71,7 +69,6 @@ angular.module('app', ['naif.base64']).controller('clickCtrl', function ($scope,
       htmlAndImages = {
           html: {
               "documentPath": "/contentlibrary/donut_2/" + $scope.htmlFileName + ".htm",
-              // "content": finalHtml
               "content": rawHtml
           },
           images: imageDataArray,
