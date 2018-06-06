@@ -18,8 +18,8 @@ angular.module('app').service('clickStorage', function ($q, $http) {
     // API calls
 
     // ******* Create Campaign *******
-    this.createCampaign = function () {
-
+    this.createCampaign = function (data) {
+        console.log(data);
     }
 
 });

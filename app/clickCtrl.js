@@ -29,7 +29,10 @@ angular.module('app', ['naif.base64']).controller('clickCtrl', function ($scope,
     });
 
     $scope.submit = function() {
-
-        clickStorage.createCampaign();
+        var data = {
+            subjectLine: $scope.subjectLine,
+            zipFile: $scope.zipFile.base64
+        }
+        clickStorage.createCampaign(data);
     }
 });
