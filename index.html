@@ -21,31 +21,17 @@
     <div ng-init="showForm = true" ng-show="showForm" class="row">
       <div class="col-md-12">
         <form id="click-form" ng-submit="submit()">
-          <!-- <div class="form-group">
-            <label for="subjectLine">Subject Line</label>
-            <input type="text" id="subjectLine" ng-model="newSubject" class="form-control">
-          </div> -->
-          <!-- <div class="form-group">
-            <label for="emailList">Send to which list of emails?</label>
-            <select class="form-control" ng-model="listDropdown" ng-options="y for (x, y) in listName">
-            </select>
-          </div> -->
-          <!-- <div class="form-group">
-            <label for="emailFolder">Which folder?</label>
-            <select class="form-control" ng-model="folderDropdown" ng-options="folder for (id, folder) in folderName">
-            </select>
-          </div> -->
           <div class="form-group">
-            <label for="zip">Upload Images</label>
-            <input class="zipInput" type='file' id="rawImages" ng-model='uploadedImage' multiple base-sixty-four-input>
+              <label for="subjectLine">Subject Line</label>
+              <input type="text" id="subjectLine" ng-model="subjectLine" class="form-control">
           </div>
           <div class="form-group">
-              <label for="subjectLine">HTML File Name</label>
-              <input type="text" id="htmlFileName" ng-model="htmlFileName" class="form-control">
+                <label>Email Address List</label>
+                <!-- drop down input goes here -->
           </div>
           <div class="form-group">
-              <label>Raw HTML</label>
-              <textarea rows="12" cols="100" ng-model="rawHtml" class="form-control"></textarea>
+            <label for="zip">Upload Zip File</label>
+            <input class="zipInput" type='file' id="zipFile" ng-model='zipFile' base-sixty-four-input>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-success" ng-click="showForm = false; loadingSpinner = true">Submit</button>
